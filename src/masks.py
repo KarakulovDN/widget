@@ -1,4 +1,6 @@
-def get_mask_card_number(card_number: [int]) -> [int]:
+from typing import Union
+
+def get_mask_card_number(card_number: str) -> Union[str]:
     """Функция маскировки номера банковской карты"""
     if card_number.isdigit() and len(card_number) == 16:
         hide_digital = card_number[6:-4]
@@ -15,7 +17,7 @@ def get_mask_card_number(card_number: [int]) -> [int]:
         return "Введен не корректный номер карты"
 
 
-def get_mask_account(mask_account: [int]) -> [int]:
+def get_mask_account(mask_account: str) -> Union[str]:
     """Функция маскировки номера банковского счета"""
     if mask_account.isdigit() and len(mask_account) == 20:
         hide_digital = mask_account[:-4]

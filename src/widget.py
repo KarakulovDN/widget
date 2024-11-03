@@ -1,11 +1,12 @@
 from src.masks import get_mask_account, get_mask_card_number
+from typing import Union
 
-def get_date(current_data: str) -> str:
+def get_date(current_data: str) -> Union[str]:
     """Функция определяющая текущую дату в формате dd.mm.YYYY"""
     return f"{current_data[8:10]}.{current_data[5:7]}.{current_data[:4]}"
 
 
-def mask_account_card(string_bank_card_or_bank_account: str) -> str:
+def mask_account_card(string_bank_card_or_bank_account: str) -> Union[str]:
     """Функция, которая умеет обрабатывать информацию как о картах, так и о счетах"""
     account_bank = "".join("" if el.isdigit() else el for el in string_bank_card_or_bank_account)
     if 'Счет ' in string_bank_card_or_bank_account:
@@ -18,7 +19,7 @@ def mask_account_card(string_bank_card_or_bank_account: str) -> str:
         data_card_mask = name_card + number_card_mask
         return data_card_mask
 #
-# print(mask_account_card('Maestro 1596837868705199'))
+print(mask_account_card('Maestro 1596837868705199'))
 # print(mask_account_card('Счет 64686473678894779589'))
 # print(mask_account_card('MasterCard 7158300734726758'))
 # print(mask_account_card('Счет 35383033474447895560'))
