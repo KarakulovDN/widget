@@ -19,7 +19,7 @@ def mask_account_card(string_bank_card_or_bank_account: str) -> Union[str]:
         data_card_mask = name_card + number_card_mask
         return data_card_mask
 
-# print(mask_account_card('Maestro 1596837868705199'))
+# print(mask_account_card('Maestro 1596837868705149'))
 # print(mask_account_card('Счет 64686473678894779589'))
 # print(mask_account_card('MasterCard 7158300734726758'))
 # print(mask_account_card('Счет 35383033474447895560'))
