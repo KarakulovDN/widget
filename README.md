@@ -22,5 +22,5 @@
 * Тестирование проекта с помощью pytest
 
 ## Инструкция по установке
-1. git clone https://github.com/KarakulovDN/widget.git
-2. pip install -r requirements.txt
+1. `git clone https://github.com/KarakulovDN/widget.git`
+2. `pip install -r requirements.txt`
