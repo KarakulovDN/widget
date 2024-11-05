@@ -1,5 +1,6 @@
 from typing import Union
 
+
 def get_mask_card_number(card_number: str) -> Union[str]:
     """Функция маскировки номера банковской карты"""
     if card_number.isdigit() and len(card_number) == 16:
@@ -31,12 +32,3 @@ def get_mask_account(mask_account: str) -> Union[str]:
 
     else:
         return "Введен не корректный номер счета"
-
-#
-# card_number_enter = "7000795649606361"
-# print(get_mask_card_number(card_number_enter))
-
-
-# bank_account = "73654108430135874305"
-# print(get_mask_account(bank_account))
-#
