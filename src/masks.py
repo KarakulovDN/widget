@@ -9,11 +9,12 @@ def get_mask_card_number(card_number: str) -> Union[str]:
         for digits in hide_digital:
             if digits >= '0':
                 digital_stars += "*"
-
         card_number_hide = card_number[0:6] + digital_stars + card_number[-4:]
         card_number_split = ' '.join(card_number_hide[i * 4:(i + 1) * 4] for i in range(4))
         return card_number_split
-
+    # Проверка на пустую строку
+    elif len(card_number) == 0:
+        return "Поле \"Номер карты\" не должно быть пустым"
     else:
         return "Введен не корректный номер карты"
 
@@ -29,6 +30,9 @@ def get_mask_account(mask_account: str) -> Union[str]:
 
         bank_account_hide = digital_stars + mask_account[-4:]
         return bank_account_hide[-6:]
+    # Проверка на пустую строку
+    elif len(mask_account) == 0:
+        return "Поле \"Номер банковского счета\" не должно быть пустым"
 
     else:
         return "Введен не корректный номер счета"
