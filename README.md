@@ -15,10 +15,54 @@
 * Функция сортировки по дате
 * Функция фильтрации в операциях по счетам
 * Тестирование проекта с помощью pytest
+* Функция вывода типа совершенной операции
+* Функция фильтрации словаря по валюте
+* Функция генерации номера карты
 
 ## Структура проекта:
-* tests/ - папка содержит тесты проекта.
-* src/ - папка содержит файлы с функциями проекта.
+* __tests__\ - папка содержит тесты проекта.
+* ----- conftest.py
+* ----- test_generators.py
+* ----- test_masks.py
+* ----- test_processing.py
+* ----- test_widget.py
+
+
+* __src__\ - папка содержит файлы с функциями проекта.
+* ----- generators.py
+* ----- masks.py
+* ----- processing.py
+* ----- widget.py 
+
+## Покрытие pytest:
+tests\test_generators.py ...                  [ 27%] 
+
+tests\test_masks.py ..                        [ 45%] 
+
+tests\test_processing.py ....                 [ 81%]
+
+tests\test_widget.py ..                       [100%]
+
+
+#### Name                       Stmts   Miss  Cover
+
+----------------------------------------------       
+src\__init__.py                0      0   100%       
+src\generators.py             16      1    94%       
+src\masks.py                  26      0   100%       
+src\processing.py              6      0   100%       
+src\widget.py                 31      1    97%       
+tests\__init__.py              0      0   100%       
+tests\conftest.py             71      0   100%       
+tests\test_generators.py      22      0   100%       
+tests\test_masks.py           12      0   100%       
+tests\test_processing.py      15      0   100%       
+tests\test_widget.py          20      0   100%       
+----------------------------------------------       
+TOTAL                        219      2    99%       
+
+================ 11 passed in 0.11s ================ 
+
 
 ## Инструкция по установке
 1. `git clone https://github.com/KarakulovDN/widget.git`
