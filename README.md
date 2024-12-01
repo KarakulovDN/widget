@@ -26,6 +26,7 @@
 * ----- test_masks.py
 * ----- test_processing.py
 * ----- test_widget.py
+* ----- test_decorators.py
 
 
 * __src__\ - папка содержит файлы с функциями проекта.
@@ -33,35 +34,38 @@
 * ----- masks.py
 * ----- processing.py
 * ----- widget.py 
+* ----- decorators.py
 
 ## Покрытие pytest:
-tests\test_generators.py ...                  [ 27%] 
+tests\test_decorators.py .....                [ 31%] 
 
-tests\test_masks.py ..                        [ 45%] 
+tests\test_generators.py ...                  [ 50%] 
 
-tests\test_processing.py ....                 [ 81%]
+tests\test_masks.py ..                        [ 62%]
+
+tests\test_processing.py ....                 [ 87%]
 
 tests\test_widget.py ..                       [100%]
-
 
 #### Name                       Stmts   Miss  Cover
 
 ----------------------------------------------       
 src\__init__.py                0      0   100%       
+src\decorators.py             17      0   100%       
 src\generators.py             16      1    94%       
 src\masks.py                  26      0   100%       
 src\processing.py              6      0   100%       
 src\widget.py                 31      1    97%       
 tests\__init__.py              0      0   100%       
 tests\conftest.py             71      0   100%       
+tests\test_decorators.py      32      0   100%       
 tests\test_generators.py      22      0   100%       
 tests\test_masks.py           12      0   100%       
 tests\test_processing.py      15      0   100%       
 tests\test_widget.py          20      0   100%       
 ----------------------------------------------       
-TOTAL                        219      2    99%       
-
-================ 11 passed in 0.11s ================ 
+TOTAL                        268      2    99%
+================ 16 passed in 0.12s ================ 
 
 
 ## Инструкция по установке
