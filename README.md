@@ -27,6 +27,8 @@
 * ----- test_processing.py
 * ----- test_widget.py
 * ----- test_decorators.py
+* ----- test_external_api.py
+* ----- test_utils.py
 
 
 * __src__\ - папка содержит файлы с функциями проекта.
@@ -35,6 +37,10 @@
 * ----- processing.py
 * ----- widget.py 
 * ----- decorators.py
+* ----- external_api.py
+* ----- utils.py
+
+* __logs__\ - папка содержит логи функций.
 
 ## Покрытие pytest:
 tests\test_decorators.py .....                [ 31%] 
@@ -50,21 +56,25 @@ tests\test_widget.py ..                       [100%]
 #### Name                       Stmts   Miss  Cover
 
 ----------------------------------------------       
-src\__init__.py                0      0   100%       
-src\decorators.py             17      0   100%       
-src\generators.py             16      1    94%       
-src\masks.py                  26      0   100%       
-src\processing.py              6      0   100%       
-src\widget.py                 31      1    97%       
-tests\__init__.py              0      0   100%       
-tests\conftest.py             71      0   100%       
-tests\test_decorators.py      32      0   100%       
-tests\test_generators.py      22      0   100%       
-tests\test_masks.py           12      0   100%       
-tests\test_processing.py      15      0   100%       
-tests\test_widget.py          20      0   100%       
-----------------------------------------------       
-TOTAL                        268      2    99%
+src\__init__.py                  0      0   100%     
+src\decorators.py               17      0   100%     
+src\external_api.py             14      1    93%     
+src\generators.py               16      1    94%     
+src\masks.py                    26      0   100%     
+src\processing.py                6      0   100%     
+src\utils.py                    24      5    79%     
+src\widget.py                   31      1    97%     
+tests\__init__.py                0      0   100%     
+tests\conftest.py               71      0   100%     
+tests\test_decorators.py        31      0   100%     
+tests\test_external_api.py      10      0   100%     
+tests\test_generators.py        22      0   100%     
+tests\test_masks.py             12      0   100%     
+tests\test_processing.py        15      0   100%     
+tests\test_utils.py             23      0   100%     
+tests\test_widget.py            20      0   100%     
+------------------------------------------------     
+TOTAL                          338      8    98%
 ================ 16 passed in 0.12s ================ 
 
 
