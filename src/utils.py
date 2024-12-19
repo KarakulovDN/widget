@@ -8,7 +8,8 @@ logging.basicConfig(
     filename="../logs/utils.log",
     encoding="utf-8",
     filemode="w",
-    )
+)
+
 get_operations_data_logger = logging.getLogger()
 transaction_amount_logger = logging.getLogger()
 
