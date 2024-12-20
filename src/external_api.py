@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 
 
 def convert_from_i_to_rub(transaction: Any) -> Any:
-    amount = float(transaction["amount"])   # получение суммы траты
-    currency = transaction["currency"]  # получение валюты
+    amount = float(transaction["operationAmount"]["amount"])   # получение суммы траты
+    currency = transaction["operationAmount"]["currency"]["code"]  # получение валюты
 
     if currency == "RUB":
         return float(amount)
@@ -22,7 +22,7 @@ def convert_from_i_to_rub(transaction: Any) -> Any:
         response.raise_for_status()
 
         data = response.json()
-        return float(data["result"])
+        return data["result"]
 
     else:
         raise ValueError(f"Неизвестная валюта {currency}.")
