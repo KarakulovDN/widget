@@ -4,7 +4,7 @@ from json import JSONDecodeError
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format="%(levelname)s: %(filename)s: %(funcName)s %(lineno)s: %(asctime)s - %(message)s",
+    format="%(levelname)s: %(filename)s: %(funcName)s (строка вызова %(lineno)s): %(asctime)s - %(message)s",
     filename="../logs/utils.log",
     encoding="utf-8",
     filemode="w",
