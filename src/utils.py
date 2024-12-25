@@ -2,34 +2,31 @@ import json
 import logging
 from json import JSONDecodeError
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(levelname)s: %(filename)s: %(funcName)s (строка вызова %(lineno)s): %(asctime)s - %(message)s",
-    filename="../logs/utils.log",
-    encoding="utf-8",
-    filemode="w",
-)
-
-get_operations_data_logger = logging.getLogger()
-transaction_amount_logger = logging.getLogger()
+logger = logging.getLogger("utils")
+file_handler = logging.FileHandler("../logs/utils.log", encoding="utf8", mode="w")
+file_formatter = logging.Formatter("%(levelname)s: %(filename)s: %(funcName)s (строка вызова %(lineno)s): %(asctime)s"
+                                   " - %(message)s")
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
+logger.setLevel(logging.DEBUG)
 
 
 def get_transactions_dictionary(path: str = None) -> list:
     """Принимает путь до JSON-файла и возвращает список словарей с данными о финансовых транзакциях."""
     try:
-        logging.info(f'Получаем данные из файла {path}')
+        logger.info(f'Получаем данные из файла {path}')
         with open(path, "r", encoding="utf-8") as operations:
             try:
                 transactions = json.load(operations)
             except JSONDecodeError:
-                logging.error(f'Ошибка чтения JSON-файла {path}')
+                logger.error(f'Ошибка чтения JSON-файла {path}')
                 return []
         if not isinstance(transactions, list):
-            logging.critical('Список транзакций пуст')
+            logger.critical('Список транзакций пуст')
             return []
         return transactions
     except FileNotFoundError as ex:
-        logging.error(f'Данные не найдены: {ex}')
+        logger.error(f'Данные не найдены: {ex}')
         return []
 
 
