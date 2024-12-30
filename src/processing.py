@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Dict, List
 
 # Список для проверки функций
 user_id_list = [
@@ -9,18 +9,24 @@ user_id_list = [
 ]
 
 
-def filter_by_state(user_id_list: list[dict[str, Any]], state: str = 'EXECUTED') -> Any:
+def filter_by_state(user_id_list: dict[str, str | bool], state: str) -> list:
     """Функция возвращает новый список словарей, содержащий только те словари, у которых ключ
     state соответствует указанному значению"""
-    return [list_items for list_items in user_id_list if list_items.get('state') == state]
+    return [
+        list_items for list_items in user_id_list if isinstance(list_items, dict) and list_items.get('state') == state
+    ]
 
 
-def sort_by_date(user_id_list: list[dict[str, Any]], ascending: bool = True) -> list[dict[str, Any]]:
+def sort_by_date(user_id_list: dict[str, str | bool], ascending: bool = True) -> List[Dict[str, Any]]:
     """Функция возвращает новый список, отсортированный по дате (date)"""
-    return sorted(user_id_list, key=lambda k: k['date'], reverse=ascending)
 
+    # Проверяем, что все элементы являются словарями и имеют ключ 'date'
+    filtered_list = [k for k in user_id_list if isinstance(k, dict) and 'date' in k]
+
+    # Сортируем по дате, убирая ошибку с типом
+    return sorted(filtered_list, key=lambda k: k["date"][:10], reverse=not ascending)
 
 # Проверка функций принтом
 # print(user_id_list)
-# print(sort_by_date(user_id_list, ascending=False))
-# print(filter_by_state(user_id_list, state='CANCELED'))
+# print(sort_by_date(user_id_list))
+# print(filter_by_state(user_id_list, state='EXECUTED'))

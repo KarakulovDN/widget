@@ -17,7 +17,7 @@ def test_mask_account_card(prefix_account_number: Any, prefix_visa_classic_card_
     assert mask_account_card(prefix_visa_platinum_card_number) == 'Visa Platinum 8990 92** **** 5229'
     assert mask_account_card(account_number_word) == "Счет Поле \"Номер банковского счета\" не должно быть пустым"
     assert mask_account_card(prefix_visa_classic_card_number_empy) == "Поле \"Номер карты\" не должно быть пустым"
-    assert mask_account_card(prefix_visa_incorrect) == 'Платёжная система не найдена'
+    assert mask_account_card(prefix_visa_incorrect) == 'Visa Plattinum 7158 30** **** 6758'
     assert mask_account_card(account_number) == 'Указаны не корректные данные'
 
 

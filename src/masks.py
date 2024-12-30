@@ -2,8 +2,9 @@ import logging
 from typing import Union
 
 logger = logging.getLogger("masks")
-file_handler = logging.FileHandler("../logs/masks.log", encoding="utf8", mode="w")
-file_formatter = logging.Formatter("%(levelname)s: %(filename)s: %(funcName)s (строка вызова %(lineno)s): %(asctime)s - %(message)s")
+path = "C:/Users/KarakulovDN/PycharmProjects/pythonProjectTEST/logs/masks.log"
+file_handler = logging.FileHandler(path, encoding="utf8", mode="w")
+file_formatter = logging.Formatter("%(levelname)s: %(filename)s: %(funcName)s %(lineno)s: %(asctime)s - %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 logger.setLevel(logging.DEBUG)
@@ -52,10 +53,10 @@ def get_mask_account(mask_account: str) -> Union[str]:
     else:
         logger.error('Не корректный номер банковского счета')
         return "Введен не корректный номер счета"
-
-
-print(get_mask_card_number("1234567891234567"))
-print(get_mask_card_number("123456789134567"))
-
-print(get_mask_account("12345678911234567891"))
-print(get_mask_account("1234567891234567"))
+#
+#
+# print(get_mask_card_number("1234567891234567"))
+# print(get_mask_card_number("123456789134567"))
+#
+# print(get_mask_account("12345678911234567891"))
+# print(get_mask_account("1234567891234567"))

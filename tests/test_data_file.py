@@ -1,4 +1,4 @@
-from unittest.mock import Mock, mock_open, patch
+from unittest.mock import mock_open, patch
 
 from src.data_file import read_csv_file, read_excel_file
 

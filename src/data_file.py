@@ -12,6 +12,7 @@ def read_csv_file(file_path: str) -> list[dict]:
     except FileNotFoundError:
         return []
 
+
 if __name__ == "__main__":
     result = read_csv_file("../data/transactions.csv")
     print(result)
@@ -24,6 +25,7 @@ def read_excel_file(file_path) -> list[dict]:
         return excel_data
     except FileNotFoundError:
         return []
+
 
 if __name__ == "__main__":
     result = read_excel_file("../data/transactions_excel.xlsx")

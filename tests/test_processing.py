@@ -14,7 +14,7 @@ from src.processing import filter_by_state, sort_by_date
 )
 def test_filter_by_state(list_dictionaries: Any, state: Any) -> Any:
     try:
-        assert filter_by_state(list_dictionaries) == state
+        assert filter_by_state(list_dictionaries, 'EXECUTED') == state
     except AssertionError:
         print("Некорректные данные")
 

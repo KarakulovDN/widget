@@ -3,7 +3,8 @@ import logging
 from json import JSONDecodeError
 
 logger = logging.getLogger("utils")
-file_handler = logging.FileHandler("../logs/utils.log", encoding="utf8", mode="w")
+path = "C:/Users/KarakulovDN/PycharmProjects/pythonProjectTEST/logs/utils.log"
+file_handler = logging.FileHandler(path, encoding="utf8", mode="w")
 file_formatter = logging.Formatter("%(levelname)s: %(filename)s: %(funcName)s (строка вызова %(lineno)s): %(asctime)s"
                                    " - %(message)s")
 file_handler.setFormatter(file_formatter)
@@ -31,4 +32,4 @@ def get_transactions_dictionary(path: str = None) -> list:
 
 
 transaction = get_transactions_dictionary("../data/operations.json")
-print(transaction)
+# print(transaction)
